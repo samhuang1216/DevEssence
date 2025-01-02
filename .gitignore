@@ -39,11 +39,15 @@ yarn-error.log*
 .idea/
 .vscode/
 *.iml
+**/.settings/
+.classpath
+.factorypath
+.project
 
 # ---- Java ----
 # 編譯產物
-/target/
-/out/
+**/target/
+**/out/
 
 # Maven
 .mvn/
