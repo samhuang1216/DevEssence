@@ -1,24 +1,24 @@
 package com.example.controller;
 
-import com.example.service.SampleService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.example.service.ServHelloService;
+import com.example.service.SampleService;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
+@RequiredArgsConstructor
 public class HelloController {
 
+    private final ServHelloService servHelloService;
     private final SampleService sampleService;
-
-    public HelloController(SampleService sampleService) {
-        this.sampleService = sampleService;
-    }
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello from Spring MVC!";
+        return servHelloService.hello();
     }
 
     @GetMapping("/names")
