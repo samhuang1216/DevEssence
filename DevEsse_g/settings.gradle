@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = 'DevEsse_g'
-include('app')
+
